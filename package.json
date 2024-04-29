@@ -1,6 +1,6 @@
 {
   "name": "awesome-excel",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "js easy export excel",
   "main": "lib/awesomeExcel.min.js",
   "files": [
