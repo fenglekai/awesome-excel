@@ -2,12 +2,12 @@
   "name": "awesome-excel",
   "version": "1.0.0",
   "description": "js easy export excel",
-  "main": "dist/FileSaver.min.js",
+  "main": "lib/awesomeExcel.min.js",
   "files": [
-    "dist/useExcel.js",
-    "dist/useExcel.min.js",
-    "dist/useExcel.min.js.map",
-    "src/useExcel.js"
+    "lib/awesomeExcel.js",
+    "lib/awesomeExcel.min.js",
+    "lib/awesomeExcel.min.js.map",
+    "src/awesomeExcel.js"
   ],
   "scripts": {
     "dev": "grunt dev",
