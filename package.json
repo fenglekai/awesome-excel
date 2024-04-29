@@ -1,0 +1,51 @@
+{
+  "name": "awesome-excel",
+  "version": "1.0.0",
+  "description": "js easy export excel",
+  "main": "dist/FileSaver.min.js",
+  "files": [
+    "dist/useExcel.js",
+    "dist/useExcel.min.js",
+    "dist/useExcel.min.js.map",
+    "src/useExcel.js"
+  ],
+  "scripts": {
+    "dev": "grunt dev",
+    "build": "grunt"
+  },
+  "keywords": [
+    "excel",
+    "xlsx",
+    "export",
+    "javascript"
+  ],
+  "author": "fenglekai",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fenglekai/awesome-excel"
+  },
+  "bugs": {
+    "url": "https://github.com/fenglekai/awesome-excel/issues"
+  },
+  "homepage": "https://github.com/fenglekai/awesome-excel#readme",
+  "dependencies": {
+    "exceljs": "^4.4.0",
+    "file-saver": "^2.0.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.4",
+    "@babel/plugin-transform-modules-commonjs": "^7.24.1",
+    "@babel/preset-env": "^7.24.4",
+    "grunt": "^1.6.1",
+    "grunt-babel": "^8.0.0",
+    "grunt-contrib-clean": "^2.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^5.2.2",
+    "grunt-webpack": "^6.0.0",
+    "html-webpack-plugin": "^5.6.0",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
+  }
+}
