@@ -1,10 +1,11 @@
 import ExcelJS from "exceljs";
 import { saveAs } from "file-saver";
 
+const DEFAULT_SHEET_NAME = "sheet1";
 class AwesomeExcel {
   constructor() {
     this.workbook = new ExcelJS.Workbook();
-    this.sheetName = "sheet1";
+    this.sheetName = DEFAULT_SHEET_NAME;
     this.header = [];
     this.table = [];
   }
@@ -35,7 +36,7 @@ class AwesomeExcel {
   }
 
   /**
-   *
+   * 导出工作簿
    * @param {Object} data
    * @param {String} data.filename
    * @param {String} data.align
@@ -44,7 +45,11 @@ class AwesomeExcel {
   async exportExcel(data) {
     const { workbook, sheetName, header, table } = this;
     const { filename, align } = data;
-    const worksheet = workbook.addWorksheet(filename || sheetName);
+
+    const worksheet = workbook.addWorksheet(sheetName);
+    if (sheetName == DEFAULT_SHEET_NAME && filename) {
+      worksheet.name = filename;
+    }
 
     const ALIGN = align || "left";
     const START_ROW = header.length > 0 ? 2 : 1;
