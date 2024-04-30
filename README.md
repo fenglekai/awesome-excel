@@ -89,11 +89,11 @@ awesomeExcel.exportExcel({ filename: '工作表',align: "center" });
 
 - 参数
 
-  | 名称          | 说明             | 类型     | 默认值      |
-  | ------------- | ---------------- | -------- | ----------- |
-  | data          | 设置导出参数     | `Object` | `undefined` |
-  | data.filename | 文件名称         | `String` |             |
-  | data.align    | 设置表格内容对其 | `'left' | 'center' | 'right' | 'fill' | 'justify' | 'centerContinuous' | 'distributed'`       |             |
+  | 名称          | 说明             | 类型     | 可选项                                                       | 默认值      |
+  | ------------- | ---------------- | -------- | ------------------------------------------------------------ | ----------- |
+  | data          | 设置导出参数     | `Object` |                                                              | `undefined` |
+  | data.filename | 文件名称         | `String` |                                                              |             |
+  | data.align    | 设置表格内容对其 | `String` | `'left'`  `'center'`  `'right'`  `'fill'`   `'justify'`  `'centerContinuous'`   `'distributed'` |             |
 
 - 返回值
 

@@ -4,10 +4,8 @@
   "description": "js easy export excel",
   "main": "lib/awesomeExcel.min.js",
   "files": [
-    "lib/awesomeExcel.js",
-    "lib/awesomeExcel.min.js",
-    "lib/awesomeExcel.min.js.map",
-    "src/awesomeExcel.js"
+    "lib/",
+    "src/"
   ],
   "scripts": {
     "dev": "grunt dev",
