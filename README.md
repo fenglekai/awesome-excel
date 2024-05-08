@@ -7,7 +7,9 @@ js简单导出excel，基于[exceljs](https://github.com/exceljs/exceljs)
 npm install awesome-excel
 ```
 
-## 使用
+## 示例
+
+### 基础
 
 ```
 import AwesomeExcel from 'awesome-excel';
@@ -26,10 +28,22 @@ awesomeExcel.setHeader([
 awesomeExcel.setRows([{ name: "小明", age: "16", work: "student" },{ name: "小李", age: "22", work: "student" }]);
 
 // 导出
-awesomeExcel.exportExcel({ filename: '工作表',align: "center" });
+awesomeExcel.exportExcel({ filename: '工作表', align: "center" });
 ```
 
 好了，你已经完全学会这个工具，快去使用吧！
+
+### 不设置Header行
+
+```
+// 设置表格内容
+awesomeExcel.setRows([{ name: "小明", age: "16", work: "student" },{ name: "小李", age: "22", work: "student" }]);
+
+// 导出
+awesomeExcel.exportExcel({ filename: '工作表', align: "center", useHeaderKey: false });
+```
+
+
 
 ## 选项
 
@@ -89,11 +103,12 @@ awesomeExcel.exportExcel({ filename: '工作表',align: "center" });
 
 - 参数
 
-  | 名称          | 说明             | 类型     | 可选项                                                       | 默认值      |
-  | ------------- | ---------------- | -------- | ------------------------------------------------------------ | ----------- |
-  | data          | 设置导出参数     | `Object` |                                                              | `undefined` |
-  | data.filename | 文件名称         | `String` |                                                              |             |
-  | data.align    | 设置表格内容对其 | `String` | `'left'`  `'center'`  `'right'`  `'fill'`   `'justify'`  `'centerContinuous'`   `'distributed'` |             |
+  | 名称              | 说明                      | 类型      | 可选项                                                       | 默认值      |
+  | ----------------- | ------------------------- | --------- | ------------------------------------------------------------ | ----------- |
+  | data              | 设置导出参数              | `Object`  |                                                              | `undefined` |
+  | data.filename     | 文件名称                  | `String`  |                                                              |             |
+  | data.align        | 设置表格内容对其          | `String`  | `'left'`  `'center'`  `'right'`  `'fill'`   `'justify'`  `'centerContinuous'`   `'distributed'` |             |
+  | data.useHeaderKey | 是否使用`header`中的`key` | `Boolean` |                                                              | `true`      |
 
 - 返回值
 
