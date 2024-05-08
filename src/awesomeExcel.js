@@ -42,37 +42,45 @@ class AwesomeExcel {
    * @param {String} data.align
    * @returns
    */
-  async exportExcel(data) {
+  async exportExcel(
+    data = {
+      filename: "workbook",
+      align: "left",
+      useHeaderKey: true,
+    }
+  ) {
     const { workbook, sheetName, header, table } = this;
-    const { filename, align } = data;
+    const { filename, align, useHeaderKey } = data;
 
     const worksheet = workbook.addWorksheet(sheetName);
     if (sheetName == DEFAULT_SHEET_NAME && filename) {
       worksheet.name = filename;
     }
 
-    const ALIGN = align || "left";
     const START_ROW = header.length > 0 ? 2 : 1;
 
     worksheet.columns = header;
-
+    worksheet.columns.forEach((v) => {
+      v.alignment = { horizontal: align };
+    });
     if (this.isArrayAndElementsAreObjects(table)) {
-      let rowKeys;
-      if (table.length) {
-        const firstRow = table[0];
-        rowKeys = Object.keys(firstRow);
-        for (let i = 0; i < rowKeys.length; i++) {
-          const headerCol = worksheet.getColumn(i + 1);
-          headerCol.alignment = { horizontal: ALIGN };
-        }
-      }
-
       for (let i = 0; i < table.length; i++) {
         const row = table[i];
         const sheetRow = worksheet.getRow(i + START_ROW);
-        for (let j = 0; j < rowKeys.length; j++) {
-          const key = rowKeys[j];
-          sheetRow.getCell(j + 1).value = row[key];
+        let j = 1;
+        for (const [key, value] of Object.entries(row)) {
+          try {
+            if (useHeaderKey) {
+              sheetRow.getCell(key).value = value;
+            } else {
+              sheetRow.getCell(j).value = value;
+              j++;
+            }
+          } catch (error) {
+            return console.error(
+              `cell '${key}' not exist,please confirm whether the header 'key' is set correctly`
+            );
+          }
         }
         sheetRow.commit();
       }

@@ -14,10 +14,10 @@ function btnClick() {
   ]);
 
   // 设置表格内容
-  awesomeExcel.setRows([{ name: "小明", age: "16", work: "student" },{ name: "小李", age: "22", work: "student" }]);
+  awesomeExcel.setRows([{ name: "小明", age: "16", work: "student" },{ name1: "小李", age2: "22", work3: "student" }]);
 
   // 导出
-  awesomeExcel.exportExcel({ filename: '工作表',align: "center" });
+  awesomeExcel.exportExcel({ filename: '工作表',align: "center", useHeaderKey: false });
 }
 
 const button = document.getElementById("file-download");
