@@ -3,13 +3,16 @@
   "version": "1.0.3",
   "description": "js easy export excel",
   "main": "lib/awesomeExcel.min.js",
+  "types": "types/index.d.ts",
   "files": [
     "lib/",
-    "src/"
+    "src/",
+    "types/"
   ],
   "scripts": {
     "dev": "grunt dev",
-    "build": "grunt"
+    "build": "grunt",
+    "type-build": "grunt clean:ts-types && tsc && grunt clean:ts-build"
   },
   "keywords": [
     "excel",

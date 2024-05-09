@@ -12,6 +12,8 @@ module.exports = function (grunt) {
     clean: {
       lib: ["lib"],
       test: ["lib", "test"],
+      'ts-types': ["types"],
+      'ts-build': ["dist"],
     },
     babel: {
       options: {
@@ -50,7 +52,7 @@ module.exports = function (grunt) {
             dest: "test/src/",
           },
         ],
-      },
+      }
     },
     webpack: {
       dev: webpackConfig,
@@ -61,7 +63,6 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask("default", ["clean:lib", "babel", "uglify"]);
-
   grunt.registerTask("dev", [
     "clean:test",
     "babel",
